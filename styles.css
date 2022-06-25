@@ -1,0 +1,54 @@
+:root {
+        --bg-color-primary: #562231;
+        --bg-color-seconday: #845d5d;
+        --body-color-primary: #845d5d;
+        --body-color-seconday: #8bcedb;
+        --font-color: white;
+}
+
+h1, h2, header {
+        background-color: var(--bg-color-primary);
+        color: var(--font-color);
+        padding: 0 4px;
+        margin: 0 0;
+        width 50%;
+}
+
+label {
+        display: block;
+        text-align: left;
+        margin: auto;
+        width: auto;
+        color: var(--font-color);
+}
+
+body {
+        background: linear-gradient(45deg, var(--bg-color-primary), var(--bg-color-seconday));
+}
+
+fieldset {
+        background-color: var(--body-color-primary);
+        border-style: hidden;
+        margin: 0;
+        width 25%;
+}
+
+h3 {
+        color: black;
+        margin: 0;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        border-bottom: 5;
+        border-style: double;
+        color: var(--font-color);
+}
+
+ul {
+        margin: 4px 0;
+        width: 60%;
+        color: var(--font-color)
+}
+
+li {
+}
