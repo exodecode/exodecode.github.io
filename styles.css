@@ -1,13 +1,20 @@
 :root {
   --bg-color-primary: #562231;
-  --bg-color-seconday: #845d5d;
+  --bg-color-secondary: #845d5d;
   --body-color-primary: #845d5d;
-  --body-color-seconday: #8bcedb;
+  --body-color-secondary: #8bcedb;
   --font-color: white;
 }
 
 h1, h2 {
   background-color: var(--bg-color-primary);
+  color: var(--font-color);
+  padding: auto;
+  margin: auto;
+}
+
+h4 {
+  background-color: var(--bg-color-secondary);
   color: var(--font-color);
   padding: auto;
   margin: auto;
@@ -22,8 +29,10 @@ label {
 }
 
 body {
-  background: linear-gradient(45deg, var(--bg-color-primary), var(--bg-color-seconday));
-  width: 70%;
+  background: linear-gradient(45deg, var(--bg-color-primary), var(--bg-color-secondary));
+  width: 90%;
+  min-width: 300px;
+  max-width: 1920px;
   margin: auto;
 }
 
@@ -32,14 +41,20 @@ fieldset {
   margin: 0;
   width 25%;
   box-shadow: 0 0 20px 0;
-  margin-top: 5%;
-  margin-bottom: 2%;
   border-style: inset;
-  border-color: var(--body-color-seconday);
+  border-color: var(--body-color-secondary);
+  margin-bottom: 1%;
 }
 
-fieldset:first-of-type{
+fieldset:first-of-type {
+  margin-top: 5%;
+  margin-bottom: 3%;
   background-color: var(--bg-color-primary);
+}
+
+fieldset:last-of-type {
+  margin-bottom: 10%;
+  background-color: var(--bg-color-secondary);
 }
 
 h3 {
@@ -49,15 +64,10 @@ h3 {
 }
 
 ul {
-  margin: 4px 0;
-  width: 60%;
-  color: var(--font-color)
+  margin: 0 5%;
+  padding: 0;
+  color: var(--font-color);
 }
 
-li {
-}
-
-p {
-  display: block;
-  text-align: center;
+.bar{
 }
