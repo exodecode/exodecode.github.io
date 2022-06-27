@@ -1,75 +1,94 @@
 :root {
-  --bg-color-primary: #562231;
-  --bg-color-secondary: #845d5d;
-  --body-color-primary: #845d5d;
-  --body-color-secondary: #8bcedb;
-  --font-color: white;
+        --bg-color-primary: #562231;
+        --bg-color-secondary: #845d5d;
+        --body-color-primary: #845d5d;
+        --body-color-secondary: #8bcedb;
+        --font-color: white;
 }
 
 h1, h2 {
-  background-color: var(--bg-color-primary);
-  color: var(--font-color);
-  padding: auto;
-  margin: auto;
+        background-color: var(--bg-color-primary);
+        color: var(--font-color);
+        padding: auto;
+        margin: auto;
 }
 
 h4 {
-  background-color: var(--bg-color-secondary);
-  color: var(--font-color);
-  padding: 0 4px;
-  margin: auto;
+        background-color: var(--bg-color-secondary);
+        color: var(--font-color);
+        padding: 0 4px;
+        margin: auto;
 }
 
 label {
-  display: block;
-  text-align: left;
-  margin: auto;
-  width: auto;
-  color: var(--font-color);
+        display: block;
+        text-align: left;
+        margin: auto;
+        width: auto;
+        color: var(--font-color);
 }
 
 body {
-  background: linear-gradient(45deg, var(--bg-color-primary), var(--bg-color-secondary));
-  width: 90%;
-  min-width: 300px;
-  max-width: 1920px;
-  margin: auto;
+        background: linear-gradient(45deg, var(--bg-color-primary), var(--bg-color-secondary));
+        width: 90%;
+        min-width: 300px;
+        max-width: 900px;
+        margin: auto;
+        font-family: Hack, monospace;
+        font-weight: bold;
 }
 
 fieldset {
-  background-color: var(--body-color-primary);
-  margin: 0;
-  width 25%;
-  box-shadow: 0 0 20px 0;
-  border-style: inset;
-  border-color: var(--body-color-secondary);
-  margin-bottom: 1%;
-  margin-top: 2px;
-  padding: 8px;
+        background-color: var(--body-color-primary);
+        margin: 0;
+        width 25%;
+        box-shadow: 0 0 20px 0;
+        border-style: inset;
+        border-color: var(--body-color-secondary);
+        border-width: 4px;
+        margin-bottom: 2%;
+        margin-top: 2px;
+        padding: 8px;
 }
 
 fieldset:first-of-type {
-  margin-top: 4%;
-  margin-bottom: 2%;
-  background-color: var(--bg-color-primary);
+        margin-top: 4%;
+        margin-bottom: 4%;
+        background-color: var(--bg-color-primary);
 }
 
 fieldset:last-of-type {
-  margin-bottom: 10%;
+        margin-bottom: 4%;
 }
 
 h3 {
-  color: black;
-  margin: 0;
-  color: var(--font-color);
+        color: black;
+        margin: 0;
+        color: var(--font-color);
 }
 
 ul {
-  margin: 0px;
-  padding: 0;
-  color: var(--font-color);
-  list-style-position: inside;
+        margin: 0px;
+        padding: 0 20px;
+        color: var(--font-color);
 }
 
-li{
+li {
+        padding: 4px 0;
+}
+
+a:active {
+        color: white;
+}
+
+a:focus {
+        color: white;
+}
+
+a:hover {
+        color: white;
+}
+
+a {
+        color: var(--body-color-secondary);
 }
