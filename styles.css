@@ -44,6 +44,7 @@ fieldset {
   border-style: inset;
   border-color: var(--body-color-secondary);
   margin-bottom: 1%;
+  margin-top: 2px;
 }
 
 fieldset:first-of-type {
@@ -53,6 +54,7 @@ fieldset:first-of-type {
 }
 
 fieldset:last-of-type {
+  margin-top: 2px;
   margin-bottom: 10%;
   background-color: var(--bg-color-secondary);
 }
