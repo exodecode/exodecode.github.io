@@ -16,7 +16,7 @@ h1, h2 {
 h4 {
   background-color: var(--bg-color-secondary);
   color: var(--font-color);
-  padding: auto;
+  padding: 0 4px;
   margin: auto;
 }
 
@@ -45,18 +45,17 @@ fieldset {
   border-color: var(--body-color-secondary);
   margin-bottom: 1%;
   margin-top: 2px;
+  padding: 8px;
 }
 
 fieldset:first-of-type {
-  margin-top: 5%;
-  margin-bottom: 3%;
+  margin-top: 4%;
+  margin-bottom: 2%;
   background-color: var(--bg-color-primary);
 }
 
 fieldset:last-of-type {
-  margin-top: 2px;
   margin-bottom: 10%;
-  background-color: var(--bg-color-secondary);
 }
 
 h3 {
@@ -66,10 +65,11 @@ h3 {
 }
 
 ul {
-  margin: 0 5%;
+  margin: 0px;
   padding: 0;
   color: var(--font-color);
+  list-style-position: inside;
 }
 
-.bar{
+li{
 }
