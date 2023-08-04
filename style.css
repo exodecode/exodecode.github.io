@@ -72,8 +72,8 @@ body {
 }
 
 .song:hover {
-    border-top: solid white;
-    border-bottom: solid white;
+    border-top: solid black;
+    border-bottom: solid black;
     border-width: 0.25rem;
 }
 
@@ -94,7 +94,7 @@ body {
 }
 
 /* colors are inverted because icons are black */
-.song-control {
+.song-control-img {
     background-color: #d0b0b0;
     border: solid transparent 0.1rem;
     border-radius: 0.25rem;
@@ -103,10 +103,21 @@ body {
     filter: invert(100%);
 }
 
-.song-control:hover {
-    border: solid black 0.1rem;
-
+.current-song {
+    border-top: solid white;
+    border-bottom: solid white;
+    border-width: 0.25rem;
 }
+
+.song-control-img:hover {
+    border: solid black 0.1rem;
+}
+
+/* .song-control-img:focus {
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+    border: solid black 0.1rem;
+} */
 
 /*  */
 
@@ -116,7 +127,8 @@ body {
 
 /* responsive bits */
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 960px),
+(max-height: 800px) {
     .content {
         margin: 0;
         padding: 0;
@@ -139,7 +151,7 @@ body {
         padding: 0;
         border-radius: 0%;
         background-color: darkslategrey;
-        padding-bottom: 2rem;
+        /* padding-bottom: 2rem; */
     }
 
     .player {
@@ -149,5 +161,9 @@ body {
         border-radius: 0%;
         padding: 1rem;
         width: 100%;
+    }
+
+    .song {
+        height: 4rem;
     }
 }
