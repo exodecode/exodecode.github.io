@@ -41,11 +41,8 @@ body {
 }
 
 .song-header {
-    /* max-width: 15ch; */
     text-align: center;
     padding: 1rem;
-    /* margin-bottom: 2rem; */
-    /* background-color: pink; */
 }
 
 .song-list {
@@ -80,8 +77,6 @@ body {
 }
 
 .song:hover {
-    /* border-top: solid black;
-    border-bottom: solid black; */
     border-top: solid darkslategrey;
     border-bottom: solid darkslategrey;
     border-width: 0.25rem;
@@ -122,12 +117,6 @@ body {
 .song-control-img:hover {
     border: solid black 0.25rem;
 }
-
-/* .song-control-img:focus {
-    -webkit-filter: invert(100%);
-    filter: invert(100%);
-    border: solid black 0.1rem;
-} */
 
 /*  */
 

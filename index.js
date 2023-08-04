@@ -4,11 +4,17 @@ const next = document.getElementById('next');
 const before = document.getElementById('before');
 const audioPlayer = document.getElementById('audio-player');
 const songTitle = document.getElementById('song-header');
-
 const songList = document.getElementById('song-list');
-
 const songFileDir = './assets/music/';
 const songFileType = '.wav';
+
+let songElements = [];
+let currentSong;
+let currentIndexer = 0;
+let currentIndex = 0;
+let songNames = [];
+let paths = [];
+
 const songFiles = [
     'Cherry',
     'Demyelination',
@@ -19,23 +25,32 @@ const songFiles = [
     'Who_Let_This_Guy_in_Here',
 ];
 
-let songElements = [];
-
-// const songElements = [...document.getElementsByClassName('song')];
-// console.log(songElements);
-
 function replaceAll(string, search, replace) {
   return string.split(search).join(replace);
 }
 
-let currentSong;
+function playNext(){
+    const i = currentIndex % paths.length;
+    currentIndex = i;
+    playAtIndex(currentIndex);
+}
 
-let currentIndexer = 0;
-let currentIndex = 0;
+function playAtIndex(index) {
+    currentIndex = index;
+    const currentPath = paths[currentIndex];
+    audioPlayer.src = currentPath;
 
-let songNames = [];
+    currentSong.classList.remove("current-song");
+    currentSong = songElements[currentIndex];
+    currentSong.classList.add("current-song");
 
-let paths = [];
+    songTitle.innerText = songNames[index];
+
+    play.hidden = true;
+    pause.hidden = false;
+
+    audioPlayer.play();
+}
 
 songFiles.forEach((file, i) => {
     let songElem = document.createElement('span');
@@ -58,42 +73,9 @@ songFiles.forEach((file, i) => {
     }
 });
 
-
-
-function playNext(){
-    const i = currentIndex % paths.length;
-    currentIndex = i;
-    playAtIndex(currentIndex);
-}
-
-function playAtIndex(index) {
-    // console.log(index)
-    currentIndex = index;
-    const currentPath = paths[currentIndex];
-    // console.log(currentPath);
-    audioPlayer.src = currentPath;
-
-    currentSong.classList.remove("current-song");
-    currentSong = songElements[currentIndex];
-    // console.log(currentSong);
-    currentSong.classList.add("current-song");
-
-    songTitle.innerText = songNames[index];
-
-    play.hidden = true;
-    pause.hidden = false;
-
-    audioPlayer.play();
-}
-
-
-
 currentSong = songElements[0]
 currentSong.classList.add("current-song");
 songTitle.innerText =  replaceAll(currentSong.innerText, '_', ' ');
-
-// songElements.forEach(song => {
-// });
 
 next.onclick = () => {
     playAtIndex((currentIndex + 1) % paths.length);
