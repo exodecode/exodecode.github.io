@@ -12,28 +12,32 @@
 <body>
     <div class="content">
         <div class="player">
-            <h1 class="song-header">SONG TITLE</h1>
+            <h1 class="song-header" id="song-header">SONG TITLE</h1>
             <img src="https://picsum.photos/512" alt="" class="song-image">
 
-            <div class="progress-bar">progress: 100%</div>
+            <!-- <div class="progress-bar">progress: 100%</div> -->
             <div class="song-controls">
-                <img src="assets/navigate_before_FILL0_wght400_GRAD0_opsz48.svg" alt="" class="song-control-img">
+                <img src="assets/navigate_before_FILL0_wght400_GRAD0_opsz48.svg" alt="" class="song-control-img"
+                    id="before">
                 <img src="/assets/play_circle_FILL0_wght400_GRAD0_opsz48.svg" alt="" class="song-control-img" id="play">
                 <img src="assets/pause_circle_FILL0_wght400_GRAD0_opsz48.svg" alt="" class="song-control-img" id="pause"
                     hidden>
-                <img src="assets/navigate_next_FILL0_wght400_GRAD0_opsz48.svg" alt="" class="song-control-img">
+                <img src="assets/navigate_next_FILL0_wght400_GRAD0_opsz48.svg" alt="" class="song-control-img"
+                    id="next">
             </div>
             <!-- needs to be wired up to play button -->
             <!-- <input type="checkbox" name="" id=""> -->
         </div>
 
-        <div class="song-list">
-            <span class="song data-song"> 1. song name </span>
+        <div class="song-list" id="song-list">
+            <!-- <span class="song data-song"> 1. song name </span>
             <span class="song data-song"> 2. song name </span>
             <span class="song data-song"> 3. song name </span>
-            <span class="song data-song"> 4. song name </span>
+            <span class="song data-song"> 4. song name </span> -->
             <!-- <span class="song data-song"> 5. song name </span> -->
         </div>
+        <!-- <audio id="audio-player" controls></audio> -->
+        <audio id="audio-player"></audio>
     </div>
 
     <script src="index.js"></script>
