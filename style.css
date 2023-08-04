@@ -1,0 +1,153 @@
+:root {
+    --min-desktop-width: 960px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+html {
+    color-scheme: dark;
+    background-color: blueviolet;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    background-color: black;
+    /* background-image: url(./assets/voronoi.png);
+    background-repeat: repeat;
+    background-size: 512px; */
+}
+
+.song-image {
+    width: 70%;
+}
+
+.player {
+    width: 45rem;
+    height: 800px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: slategrey;
+    border-radius: 1rem;
+    margin: 1rem;
+}
+
+.song-list {
+    display: flex;
+    flex-flow: column;
+    background-color: darkslategray;
+    align-items: start;
+    border-radius: 1rem;
+    padding: 1rem;
+    height: calc(800px - 2rem);
+    width: calc(20rem - 2rem);
+    margin: 1rem;
+}
+
+.song:nth-child(even) {
+    background-color: gray;
+}
+
+.song:nth-child(odd) {
+    background-color: darkgray;
+}
+
+.song {
+    --lpad: 2rem;
+    display: flex;
+    padding-left: var(--lpad);
+    justify-content: start;
+    align-items: center;
+    width: calc(100% - var(--lpad));
+    height: 2rem;
+    font-size: x-large;
+}
+
+.song:hover {
+    border-top: solid white;
+    border-bottom: solid white;
+    border-width: 0.25rem;
+}
+
+.content {
+    display: flex;
+    width: 960px;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.song-controls {
+    padding: 0.1rem;
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* colors are inverted because icons are black */
+.song-control {
+    background-color: #d0b0b0;
+    border: solid transparent 0.1rem;
+    border-radius: 0.25rem;
+    width: 5rem;
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+}
+
+.song-control:hover {
+    border: solid black 0.1rem;
+
+}
+
+/*  */
+
+.progress-bar {
+    margin: 1rem 0 1rem 0;
+}
+
+/* responsive bits */
+
+@media screen and (max-width: 960px) {
+    .content {
+        margin: 0;
+        padding: 0;
+        flex-wrap: wrap;
+        width: fit-content;
+        height: fit-content;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        width: fit-content;
+        background-color: slategrey;
+    }
+
+    .song-list {
+        width: calc(100vw);
+        height: fit-content;
+        margin: 0;
+        padding: 0;
+        border-radius: 0%;
+        background-color: darkslategrey;
+        padding-bottom: 2rem;
+    }
+
+    .player {
+        justify-content: center;
+        height: fit-content;
+        margin: 0;
+        border-radius: 0%;
+        padding: 1rem;
+        width: 100%;
+    }
+}
