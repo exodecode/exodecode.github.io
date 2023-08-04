@@ -93,7 +93,7 @@ play.onclick = () => {
     play.hidden = true;
     pause.hidden = false;
     if(!hasPlayed){
-        playAtIndex(0);
+        playAtIndex(currentIndex);
     }
     else{
         audioPlayer.play();

@@ -18,10 +18,10 @@ body {
     height: 100vh;
     width: 100vw;
     justify-content: center;
-    background-color: black;
-    /* background-image: url(./assets/voronoi.png);
+    /* background-color: black; */
+    background-image: url(./assets/voronoi.png);
     background-repeat: repeat;
-    background-size: 512px; */
+    background-size: 512px;
 }
 
 .song-image {
