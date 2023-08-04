@@ -45,14 +45,23 @@ body {
     padding: 1rem;
 }
 
+.list-container {
+    width: fit-content;
+
+    height: calc(800px + 2rem);
+    /* background-color: pink; */
+}
+
 .song-list {
     display: flex;
     flex-flow: column;
     background-color: darkslategray;
     align-items: start;
+    /* justify-content: start; */
     border-radius: 1rem;
     padding: 1rem;
-    height: calc(800px - 2rem);
+    /* height: calc(800px - 2rem); */
+    height: fit-content;
     width: calc(30rem - 2rem);
     margin: 1rem;
 }
@@ -163,5 +172,10 @@ body {
 
     .song {
         height: 4rem;
+    }
+
+    .list-container {
+        width: fit-content;
+        height: fit-content;
     }
 }
