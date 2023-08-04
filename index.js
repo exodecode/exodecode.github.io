@@ -5,6 +5,7 @@ const before = document.getElementById('before');
 const audioPlayer = document.getElementById('audio-player');
 const songTitle = document.getElementById('song-header');
 const songList = document.getElementById('song-list');
+const songImage = document.getElementById('song-image');
 
 const songFileDir = './assets/music/';
 const songFileType = '.wav';
@@ -57,6 +58,7 @@ function playAtIndex(index) {
 
     audioPlayer.play();
     hasPlayed = true;
+    songImage.src = './assets/jumpyBug.gif';
 }
 
 songFiles.forEach((file, i) => {
@@ -97,6 +99,7 @@ play.onclick = () => {
     }
     else{
         audioPlayer.play();
+        songImage.src = './assets/jumpyBug.gif';
     }
 }
 
@@ -104,6 +107,7 @@ pause.onclick = () => {
     play.hidden = false;
     pause.hidden = true;
     audioPlayer.pause();
+        songImage.src = './assets/jumpyBug_paused.png';
 }
 
 function togglePlay()
@@ -113,11 +117,13 @@ function togglePlay()
         play.hidden = false;
         pause.hidden = true;
         audioPlayer.pause();
+        songImage.src = './assets/jumpyBug_paused.png';
     }
     else{
         play.hidden = true;
         pause.hidden = false;
         audioPlayer.play();
+        songImage.src = './assets/jumpyBug.gif';
     }
 }
 

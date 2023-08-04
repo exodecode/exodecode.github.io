@@ -43,11 +43,11 @@ body {
 .song-header {
     text-align: center;
     padding: 1rem;
+    text-decoration: underline;
 }
 
 .list-container {
     width: fit-content;
-
     height: calc(800px + 2rem);
     /* background-color: pink; */
 }
@@ -128,10 +128,6 @@ body {
 }
 
 /*  */
-
-.progress-bar {
-    margin: 1rem 0 1rem 0;
-}
 
 /* responsive bits */
 
