@@ -2,10 +2,11 @@ const play = document.getElementById('play');
 const pause = document.getElementById('pause');
 const next = document.getElementById('next');
 const before = document.getElementById('before');
-const audioPlayer = document.getElementById('audio-player');
 const songTitle = document.getElementById('song-header');
 const songList = document.getElementById('song-list');
 const songImage = document.getElementById('song-image');
+
+const audio = new Audio();
 
 const songFileDir = './assets/music/';
 const songFileType = '.wav';
@@ -45,7 +46,13 @@ function playPrevious()
 function playAtIndex(index) {
     currentIndex = index;
     const currentPath = paths[currentIndex];
-    audioPlayer.src = currentPath;
+    
+    if(!audio.paused){
+        audio.pause();
+        audio.currentTime = 0;
+    }
+
+    audio.src = currentPath;
 
     currentSong.classList.remove("current-song");
     currentSong = songElements[currentIndex];
@@ -56,7 +63,7 @@ function playAtIndex(index) {
     play.hidden = true;
     pause.hidden = false;
 
-    audioPlayer.play();
+    audio.play();
     hasPlayed = true;
     songImage.src = './assets/jumpyBug.gif';
 }
@@ -86,43 +93,47 @@ currentSong = songElements[0]
 currentSong.classList.add("current-song");
 songTitle.innerText =  replaceAll(currentSong.innerText, '_', ' ');
 
-audioPlayer.addEventListener("ended", playNext, false);
+audio.addEventListener("ended", playNext, false);
 
-next.onclick = playNext;
-before.onclick = playPrevious;
+next.addEventListener('click', playNext);
+before.addEventListener('click', playPrevious);
 
-play.onclick = () => {
+play.addEventListener('click', () => {
     play.hidden = true;
     pause.hidden = false;
     if(!hasPlayed){
         playAtIndex(currentIndex);
     }
     else{
-        audioPlayer.play();
+        if(!audio.paused){
+            audio.pause();
+            audio.currentTime = 0;
+        }
+        audio.play();
         songImage.src = './assets/jumpyBug.gif';
     }
-}
+});
 
-pause.onclick = () => {
+pause.addEventListener('click', () => {
     play.hidden = false;
     pause.hidden = true;
-    audioPlayer.pause();
-        songImage.src = './assets/jumpyBug_paused.png';
-}
+    audio.pause();
+    songImage.src = './assets/jumpyBug_paused.png';
+});
 
 function togglePlay()
 {
-    if(!audioPlayer.paused)
+    if(!audio.paused)
     {
         play.hidden = false;
         pause.hidden = true;
-        audioPlayer.pause();
+        audio.pause();
         songImage.src = './assets/jumpyBug_paused.png';
     }
     else{
         play.hidden = true;
         pause.hidden = false;
-        audioPlayer.play();
+        audio.play();
         songImage.src = './assets/jumpyBug.gif';
     }
 }
@@ -134,3 +145,5 @@ document.body.onkeydown = function(e) {
         }
     }
 }
+
+audio.src = paths[0];
