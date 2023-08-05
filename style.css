@@ -1,7 +1,3 @@
-:root {
-    --min-desktop-width: 960px;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -29,15 +25,18 @@ body {
 }
 
 .player {
-    width: 45rem;
-    height: 800px;
     display: flex;
+    width: 45rem;
+    /* height: 800px; */
+
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    background-color: slategrey;
-    border-radius: 1rem;
+
     margin: 1rem;
+
+    border-radius: 1rem;
+    background-color: slategrey;
 }
 
 .song-header {
@@ -47,8 +46,11 @@ body {
 }
 
 .list-container {
+    display: flex;
+    flex-wrap: nowrap;
     width: fit-content;
-    height: calc(800px + 2rem);
+    height: fit-content;
+    /* height: calc(800px + 2rem); */
     /* background-color: pink; */
 }
 
@@ -64,14 +66,6 @@ body {
     height: fit-content;
     width: calc(30rem - 2rem);
     margin: 1rem;
-}
-
-.song:nth-child(even) {
-    background-color: gray;
-}
-
-.song:nth-child(odd) {
-    background-color: darkgray;
 }
 
 .song {
@@ -94,7 +88,8 @@ body {
 .content {
     display: flex;
     width: 960px;
-    height: 100%;
+    /* height: 100%; */
+    height: 100vh;
     justify-content: space-around;
     align-items: center;
 }
@@ -117,28 +112,22 @@ body {
     filter: invert(100%);
 }
 
-.current-song {
-    border-top: solid white;
-    border-bottom: solid white;
-    border-width: 0.25rem;
-}
-
-.song-control-img:hover {
-    border: solid black 0.25rem;
-}
-
 /*  */
 
 /* responsive bits */
 
-@media screen and (max-width: 960px),
-(max-height: 800px) {
+@media screen and (max-width: 600px),
+(max-height: 600px) {
     .content {
         margin: 0;
         padding: 0;
-        flex-wrap: wrap;
+        /* flex-wrap: wrap; */
         width: fit-content;
         height: fit-content;
+    }
+
+    .list-container {
+        flex-wrap: wrap;
     }
 
     body {
@@ -174,4 +163,22 @@ body {
         width: fit-content;
         height: fit-content;
     }
+}
+
+.song:nth-child(even) {
+    background-color: gray;
+}
+
+.song:nth-child(odd) {
+    background-color: darkgray;
+}
+
+.song-control-img:hover {
+    border: solid black 0.25rem;
+}
+
+.current-song {
+    border-top: solid white;
+    border-bottom: solid white;
+    border-width: 0.25rem;
 }
