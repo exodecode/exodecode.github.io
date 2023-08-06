@@ -1,4 +1,4 @@
-"use strict";
+'use strict'
 
 const songFileDir: string = './assets/music/'
 const songFileType: string = '.wav'
@@ -32,7 +32,7 @@ const paths: string[] = []
 
 let hasPlayed: boolean = false
 
-function replaceAll(s: string, search: string, replace: string): string {
+function replaceAll (s: string, search: string, replace: string): string {
   return s.split(search).join(replace)
 }
 
@@ -41,7 +41,7 @@ function replaceAll(s: string, search: string, replace: string): string {
  * @param {number} index
  * @returns {void}
  */
-function playAtIndex(index: number): void {
+function playAtIndex (index: number): void {
   currentIndex = index
   const currentPath = paths[currentIndex]
 
@@ -61,7 +61,8 @@ function playAtIndex(index: number): void {
     play.hidden = true
     pause.hidden = false
 
-    audio.play()
+    void audio.play()
+
     hasPlayed = true
     songImage.src = './assets/jumpyBug.gif'
   }
@@ -70,7 +71,7 @@ function playAtIndex(index: number): void {
 /**
  * Toggles the current Audio instance between play and pause.
  */
-function togglePlay(): void {
+function togglePlay (): void {
   if (songTitle !== null && play !== null && pause !== null && songImage !== null) {
     if (!audio.paused) {
       play.hidden = false
@@ -80,7 +81,7 @@ function togglePlay(): void {
     } else {
       play.hidden = true
       pause.hidden = false
-      audio.play()
+      void audio.play()
       songImage.src = './assets/jumpyBug.gif'
     }
   }
@@ -89,21 +90,21 @@ function togglePlay(): void {
 /**
  * Plays the song after the current index.
  */
-function playNext(): void {
+function playNext (): void {
   playAtIndex((currentIndex + 1) % paths.length)
 }
 
 /**
  * Plays the song before the current index.
  */
-function playPrevious(): void {
+function playPrevious (): void {
   playAtIndex((currentIndex - 1 + paths.length) % paths.length)
 }
 
 /**
  * Initialization
  */
-function init(): void {
+function init (): void {
   if (songList !== null && songTitle !== null && next !== null && before !== null && play !== null && pause !== null) {
     songFiles.forEach((file, i) => {
       const songElem = document.createElement('span')
@@ -135,17 +136,19 @@ function init(): void {
     before.addEventListener('click', playPrevious)
 
     play.addEventListener('click', () => {
-      play.hidden = true
-      pause.hidden = false
-      if (!hasPlayed) {
-        playAtIndex(currentIndex)
-      } else {
-        if (!audio.paused) {
-          audio.pause()
-          audio.currentTime = 0
+      if (play !== null && pause !== null) {
+        play.hidden = true
+        pause.hidden = false
+        if (!hasPlayed) {
+          playAtIndex(currentIndex)
+        } else {
+          if (!audio.paused) {
+            audio.pause()
+            audio.currentTime = 0
+          }
+          void audio.play()
+          songImage.src = './assets/jumpyBug.gif'
         }
-        audio.play()
-        songImage.src = './assets/jumpyBug.gif'
       }
     })
 

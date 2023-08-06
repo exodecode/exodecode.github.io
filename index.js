@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 var songFileDir = './assets/music/';
 var songFileType = '.wav';
 var songFiles = [
@@ -48,7 +48,7 @@ function playAtIndex(index) {
         songTitle.innerText = songNames[index];
         play.hidden = true;
         pause.hidden = false;
-        audio.play();
+        void audio.play();
         hasPlayed = true;
         songImage.src = './assets/jumpyBug.gif';
     }
@@ -67,7 +67,7 @@ function togglePlay() {
         else {
             play.hidden = true;
             pause.hidden = false;
-            audio.play();
+            void audio.play();
             songImage.src = './assets/jumpyBug.gif';
         }
     }
@@ -110,18 +110,20 @@ function init() {
         next.addEventListener('click', playNext);
         before.addEventListener('click', playPrevious);
         play.addEventListener('click', function () {
-            play.hidden = true;
-            pause.hidden = false;
-            if (!hasPlayed) {
-                playAtIndex(currentIndex);
-            }
-            else {
-                if (!audio.paused) {
-                    audio.pause();
-                    audio.currentTime = 0;
+            if (play !== null && pause !== null) {
+                play.hidden = true;
+                pause.hidden = false;
+                if (!hasPlayed) {
+                    playAtIndex(currentIndex);
                 }
-                audio.play();
-                songImage.src = './assets/jumpyBug.gif';
+                else {
+                    if (!audio.paused) {
+                        audio.pause();
+                        audio.currentTime = 0;
+                    }
+                    void audio.play();
+                    songImage.src = './assets/jumpyBug.gif';
+                }
             }
         });
         pause.addEventListener('click', function () {

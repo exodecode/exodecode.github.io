@@ -8,8 +8,8 @@
         "ecmaVersion": "latest",
         "sourceType": "module",
         "project": [
-            "C:/users/nickh/onedrive/desktop/exodecode.github.io/tsconfig.json"
-        ],
+            "tsconfig.json"
+        ]
     },
     "rules": {}
 }
