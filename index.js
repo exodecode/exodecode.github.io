@@ -1,3 +1,4 @@
+"use strict";
 var songFileDir = './assets/music/';
 var songFileType = '.wav';
 var songFiles = [
@@ -7,7 +8,7 @@ var songFiles = [
     'OGLE-TR-122b',
     'Ozone',
     'WF6',
-    'Who_Let_This_Guy_in_Here!',
+    'Who_Let_This_Guy_in_Here!'
 ];
 /* Stateful Variables */
 var play = document.getElementById('play');
@@ -131,7 +132,7 @@ function init() {
         });
         document.body.onkeydown = function (e) {
             if (hasPlayed) {
-                if (e.keyCode == 32) {
+                if (e.keyCode === 32) {
                     togglePlay();
                 }
             }

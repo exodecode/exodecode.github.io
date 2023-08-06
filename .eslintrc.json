@@ -6,8 +6,10 @@
     "extends": "standard-with-typescript",
     "parserOptions": {
         "ecmaVersion": "latest",
-        "sourceType": "module"
+        "sourceType": "module",
+        "project": [
+            "C:/users/nickh/onedrive/desktop/exodecode.github.io/tsconfig.json"
+        ],
     },
-    "rules": {
-    }
+    "rules": {}
 }
