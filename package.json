@@ -1,0 +1,28 @@
+{
+  "name": "exodecode.github.io",
+  "version": "1.0.0",
+  "description": "exodecode music player",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/exodecode/exodecode.github.io.git"
+  },
+  "keywords": [
+    "music",
+    "player",
+    "exodecode"
+  ],
+  "author": "exodecode",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/exodecode/exodecode.github.io/issues"
+  },
+  "homepage": "https://github.com/exodecode/exodecode.github.io#readme",
+  "devDependencies": {
+    "eslint": "^8.46.0",
+    "eslint-config-google": "^0.14.0"
+  }
+}
