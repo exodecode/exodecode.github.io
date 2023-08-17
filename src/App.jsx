@@ -12,12 +12,10 @@ function App() {
 
   useEffect(() => {
     if(isPlaying  && songFinished){
-      console.log("asdf");
       setSongFinished(false);
       setCurrentSong(songs[(songs.indexOf(currentSong) + 1) % songs.length])
     }
     else if(isPlaying){
-      console.log("jkl");
       audioElem.src = currentSong;
       audioElem.current.play();
     }
