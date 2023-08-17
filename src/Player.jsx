@@ -30,12 +30,18 @@ function Player(props) {
     setCurrentTo(index);
   }
 
+  function handleSpace(e) {
+    if(e.key === " ") {
+      props.setIsPlaying(!props.isPlaying);
+    }
+  }
+
   return (
-    <div className="content">
+    <div className="content" onKeyDown={(e) => handleSpace(e)} tabIndex={-1}>
         <div className="list-container">
-            <div className="player">
+            <div className="player" >
                 <h1 className="song-header">{props.currentSong.title}</h1>
-                <img src={props.isPlaying ? "/assets/jumpyBug.gif" : "/assets/jumpyBug_paused.png"} alt="" className="song-image" />
+                <img src={props.isPlaying ? "/assets/jumpyBug.gif" : "/assets/jumpyBug_paused.png"} alt="" className="song-image"/>
 
                 <div className="song-controls">
                     <img src="/assets/navigate_before_FILL0_wght400_GRAD0_opsz48.svg" alt="" className="song-control-img" onClick={previous} />
