@@ -1,0 +1,202 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+html {
+  color-scheme: dark;
+  background-image: url(./assets/voronoi.png);
+  background-repeat: repeat;
+  background-size: 512px;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  background-color: transparent;
+}
+
+.song-image {
+  width: 60%;
+}
+
+.player {
+  display: flex;
+  width: calc(45rem - 1rem);
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem;
+  border-radius: 1rem;
+  background-color: slategrey;
+  border: solid darkslategray 0.5rem;
+}
+
+.song-header {
+  text-align: center;
+  padding: 1rem;
+  text-decoration: underline;
+}
+
+.list-container {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100vw;
+  height: 100vh;
+  max-height: 800px;
+}
+
+.song-list {
+  display: flex;
+  flex-flow: column;
+  background-color: darkslategray;
+  align-items: start;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  height: fit-content;
+  width: calc(30rem - 2rem);
+  margin: 0.5rem;
+}
+
+.song {
+  --lpad: 2rem;
+  display: flex;
+  padding-left: var(--lpad);
+  justify-content: start;
+  align-items: center;
+  width: calc(100% - var(--lpad));
+  height: 3rem;
+  /* font-size: x-large; */
+  font-size: 1.25rem;
+}
+
+.song:hover {
+  border-top: solid darkslategrey;
+  border-bottom: solid darkslategrey;
+  border-width: 0.25rem;
+}
+
+.current-song {
+  --current-color: slategrey;
+  border-top: solid var(--current-color);
+  border-bottom: solid var(--current-color);
+  border-width: 0.25rem;
+  text-decoration: underline;
+}
+
+.song:first-child {
+  border-radius: 1rem 1rem 0 0;
+  /* border-top: solid transparent; */
+}
+
+.song:last-child {
+  border-radius: 0 0 1rem 1rem;
+  /* border-bottom: solid transparent; */
+}
+
+.content {
+  display: flex;
+  width: 960px;
+  height: 100vh;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.song-controls {
+  padding: 0.1rem;
+  margin: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* colors are inverted because icons are black */
+.song-control-img {
+  /* background-color: #d0b0b0; */
+  border: solid transparent 0.25rem;
+  border-radius: 0.25rem;
+  width: 5rem;
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
+
+/*  */
+
+/* responsive bits */
+
+@media screen and (max-width: 600px),
+(max-height: 600px) {
+  .content {
+    margin: 0;
+    padding: 0;
+    /* flex-wrap: wrap; */
+    width: fit-content;
+    height: fit-content;
+  }
+
+  .list-container {
+    flex-wrap: wrap;
+    height: fit-content;
+    width: fit-content;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    width: fit-content;
+    height: fit-content;
+    background-color: slategrey;
+  }
+
+  .song-list {
+    width: calc(100vw);
+    height: fit-content;
+    margin: 0;
+    padding: 0;
+    border-radius: 0%;
+    background-color: darkslategrey;
+    padding-bottom: 4rem;
+  }
+
+  .player {
+    justify-content: center;
+    height: fit-content;
+    margin: 0;
+    border-radius: 0%;
+    padding: 1rem;
+    width: 100%;
+    border: none;
+  }
+
+  .song {
+    height: 4rem;
+  }
+
+  .list-container {
+    width: fit-content;
+    height: fit-content;
+  }
+
+  .song:first-child {
+    border-radius: 0 0 0 0;
+  }
+
+  .song:last-child {
+    border-radius: 0 0 0 0;
+  }
+}
+
+.song:nth-child(even) {
+  background-color: gray;
+}
+
+.song:nth-child(odd) {
+  background-color: darkgray;
+}
+
+.song-control-img:hover {
+  border: solid black 0.25rem;
+}
