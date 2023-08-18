@@ -4,7 +4,7 @@ import { songsData } from './songsData'
 import Player from './Player'
 
 function App() {
-  const [songs, setSongs] = useState(songsData);
+  const songs = songsData;
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentSong, setCurrentSong] = useState(songsData[0]);
   const [songFinished, setSongFinished] = useState(false);
@@ -29,7 +29,6 @@ function App() {
       <audio src={currentSong.source} ref={audioElem} onEnded={() => setSongFinished(true)}/>
       <Player
         songs={songs}
-        setSongs={setSongs}
         isPlaying={isPlaying}
         setIsPlaying={setIsPlaying}
         currentSong={currentSong}
@@ -38,6 +37,10 @@ function App() {
       />
     </>
   )
+}
+
+App.propTypes ={
+
 }
 
 export default App
