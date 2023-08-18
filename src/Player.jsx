@@ -1,12 +1,12 @@
 import { PropTypes } from "prop-types";
 
 function Player( { songs, isPlaying, setIsPlaying, currentSong, setCurrentSong, audioElem } ) {
-  const playingJumpyUrl = "https://drive.google.com/uc?id=1Yc5dkS4E7qTRx-rcISx_ciirSmY6kt6p";
-  const pausedJumpyUrl = "https://drive.google.com/uc?id=1wahHrMOjedBAw8MmqXFRT0IRCm9im2cA";
-  const previousIcon = "https://drive.google.com/uc?id=1w8kdI9eARPTTvCrMkOm0mPBdY6KYDv-s";
-  const nextIcon = "https://drive.google.com/uc?id=1_rZIHjFkcIm4XNwUvFjogTtcvhJ640hQ";
-  const playIcon = "https://drive.google.com/uc?id=1Ek5wF1n1Tu7InTEtmlbk3JHMD9aKvA5p";
-  const pauseIcon = "https://drive.google.com/uc?id=16dw5Bk2kHVP0q462GrLRW9a0006_Y5DS";
+  const playingJumpyUrl = "https://raw.githubusercontent.com/exodecode/assets-exodecode.github.io/a5a934a82333dc7b9782007274bcee9bacaf841a/jumpyBug.gif";
+  const pausedJumpyUrl = "https://raw.githubusercontent.com/exodecode/assets-exodecode.github.io/a5a934a82333dc7b9782007274bcee9bacaf841a/jumpyBug_paused.png";
+  const previousIcon = "https://raw.githubusercontent.com/exodecode/assets-exodecode.github.io/a5a934a82333dc7b9782007274bcee9bacaf841a/navigate_before_FILL0_wght400_GRAD0_opsz48.svg";
+  const nextIcon = "https://raw.githubusercontent.com/exodecode/assets-exodecode.github.io/a5a934a82333dc7b9782007274bcee9bacaf841a/navigate_next_FILL0_wght400_GRAD0_opsz48.svg";
+  const pauseIcon = "https://raw.githubusercontent.com/exodecode/assets-exodecode.github.io/a5a934a82333dc7b9782007274bcee9bacaf841a/pause_circle_FILL0_wght400_GRAD0_opsz48.svg";
+  const playIcon = "https://raw.githubusercontent.com/exodecode/assets-exodecode.github.io/a5a934a82333dc7b9782007274bcee9bacaf841a/play_circle_FILL0_wght400_GRAD0_opsz48.svg";
 
   function setCurrentTo(index){
     let song = songs[index];
