@@ -16,7 +16,6 @@ function App() {
       setCurrentSong(songs[(songs.indexOf(currentSong) + 1) % songs.length])
     }
     else if(isPlaying){
-      audioElem.src = currentSong;
       audioElem.current.play();
     }
     else{
